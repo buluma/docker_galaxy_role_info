@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag alpine_build:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker_galaxy_role_info:$(date +%s)
 
     - name: Create Issue on failure.
       if: failure()
