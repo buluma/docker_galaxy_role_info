@@ -25,7 +25,8 @@ jobs:
         run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
 
       - name: Verify Ansible is accessible in the built image.
-        run: docker exec --tty test-container env TERM=xterm ansible --version
+      #  run: docker exec --tty test-container env TERM=xterm ansible --version
+        run: docker exec --tty test-container env TERM=xterm pip install ansible -v
           
       - name: Create Issue Action
         if: failure()
