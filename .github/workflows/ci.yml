@@ -26,8 +26,8 @@ jobs:
 
       - name: Verify Ansible is accessible in the built image.
       #  run: docker exec --tty test-container env TERM=xterm ansible --version
-      #  run: docker exec --tty test-container env TERM=xterm pip install ansible -v
-        run: docker exec --tty test-container env TERM=xterm ansible-lint .
+        run: docker exec --tty test-container env TERM=xterm pip install ansible -v
+      #  run: docker exec --tty test-container env TERM=xterm ansible-lint .
           
       - name: Create Issue Action
         if: failure()
